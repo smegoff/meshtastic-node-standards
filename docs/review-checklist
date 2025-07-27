@@ -1,0 +1,78 @@
+# ✅ Meshtastic Node Standards – Documentation Review Checklist
+
+Use this checklist to ensure all documentation within this repository meets the quality, consistency, and coverage expected for standardised deployments.
+
+---
+
+## 📁 docs/hardware.md
+- [ ] Lists recommended boards (e.g. Heltec V3, TTGO T-Beam)
+- [ ] Includes antenna types, gain, and mounting advice
+- [ ] Regional LoRa frequency standards included (e.g. AS923 for NZ)
+- [ ] Describes weatherproof enclosure recommendations
+- [ ] Covers battery and solar power setups with safe voltages
+
+---
+
+## 📁 docs/configuration.md
+- [ ] Includes supported node roles (CLIENT, ROUTER, REPEATER, etc.)
+- [ ] Describes recommended channel naming conventions
+- [ ] Notes secure use of AES encryption for private channels
+- [ ] Mentions region presets (e.g. AS923) and how to set them
+- [ ] Covers Protobuf or device firmware compatibility
+
+---
+
+## 📁 docs/deployment-guide.md
+- [ ] Site planning advice (line-of-sight, elevation, etc.)
+- [ ] GPS location capture guidance
+- [ ] Includes time sync via GPS or app as best practice
+- [ ] Recommends signal testing prior to final install
+- [ ] Encourages photo documentation of each node
+
+---
+
+## 📁 docs/location-documentation-template.md
+- [ ] Contains all essential metadata: name, GPS, height, role, power
+- [ ] Provides section for notes and obstacles
+- [ ] Includes photo prompt or placeholder
+
+---
+
+## 📁 docs/maintenance.md
+- [ ] Lists regular check-up items (battery, RSSI, uptime)
+- [ ] Includes guidance on OTA firmware updates
+- [ ] Describes diagnostic access via BLE, serial, or Wi-Fi
+- [ ] Mentions logging or health recordkeeping
+
+---
+
+## 📁 docs/community.md
+- [ ] Clearly describes acceptable community behavior
+- [ ] Encourages regional coordination for channels and node names
+- [ ] Mentions node ownership and support responsibilities
+
+---
+
+## 📁 templates/
+- [ ] Contains a reusable `node-info-template.md` for deployments
+- [ ] Provides an `install-checklist.md` for in-field validation
+
+---
+
+## 📁 .github/CONTRIBUTING.md
+- [ ] Includes clear PR and contribution workflow
+- [ ] Mentions how to open issues or suggest improvements
+- [ ] Optionally includes a basic Code of Conduct
+
+---
+
+## 🌐 Overall Project
+- [ ] Consistent naming, formatting, and structure across all docs
+- [ ] Uses clear NZ English terminology where applicable
+- [ ] Mentions Meshtastic versions and links to official docs
+- [ ] Optional: plan to host docs via GitHub Pages for public viewing
+
+---
+
+**Tip:** Mark off each section when reviewed or completed as part of each pull request or update to maintain quality and consistency.
+
