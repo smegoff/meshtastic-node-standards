@@ -1,0 +1,5 @@
+# Maintenance & Monitoring
+
+- **Health checks:** check battery, signal quality, uptime weekly/monthly  
+- **Remote access:** BLE, serial, Wi‑Fi (when available) for diagnostics  
+- **Update process:** flash, verify via app, reboot; keep logs; include rollback
