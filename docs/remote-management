@@ -1,0 +1,95 @@
+# 🛠️ Remote Management of Meshtastic Nodes
+
+This guide outlines how to remotely manage a Meshtastic node using **Admin Channel Keys**, so you can change settings or update firmware without direct physical access.
+
+---
+
+## 🧩 What Is Remote Admin?
+
+Remote admin allows you to **send config changes over the air** to a node in the field — like changing its name, role, or power level — without needing to physically plug it into a computer or use Bluetooth.
+
+Perfect for:
+- Updating far-away repeater nodes
+- Fixing misconfigured mesh members
+- Managing community nodes remotely
+
+---
+
+## 🔐 How It Works
+
+Each Meshtastic node can have **Admin Channel Keys**. These are special keys that let trusted users **remotely configure** the node, regardless of what main channel it’s on.
+
+- Think of it like a private backdoor just for admins.
+- The node listens on **both** its normal channel **and** any admin channels you've added.
+- Admin commands are only accepted from users who have the correct admin key.
+
+---
+
+## 🧪 Remote Admin Setup (Step-by-Step)
+
+### 1. ✅ Enable Admin Access
+You must explicitly enable remote admin on the node you want to control:
+
+```bash
+meshtastic --set remoteAdmin true
+
+2. 🔑 Add an Admin Channel
+
+On your admin device, add a second channel that is marked as admin.
+
+meshtastic --ch-add admin123 --admin
+
+Replace admin123 with your secret admin password/key.
+
+3. 📡 Push the Admin Key to the Node
+
+This channel will now be used for sending admin commands. You don’t need to know the other node’s primary channel — just that it has your admin key enabled.
+4. 🛠️ Send Remote Commands
+
+You can now run any meshtastic config or update command, and the node will accept it if it sees the admin key.
+
+Examples:
+
+meshtastic --dest !abc123 --set device.role ROUTER
+meshtastic --dest !abc123 --set device.is_fixed_position true
+
+Use --dest to target a specific node.
+
+🔒 Security Tips
+
+    Use strong, unique admin keys
+
+    Avoid sharing admin channels broadly
+
+    Revoke unused admin keys by removing them from the node
+
+    Don’t mix admin and data traffic on the same channel unless you trust everyone on it
+
+🧼 Disabling Admin Access
+
+If you want to stop a node from being remotely managed, turn it off:
+
+meshtastic --set remoteAdmin false
+
+This can only be done locally.
+🧠 Notes
+
+    Admin channel traffic is encrypted
+
+    You can add multiple admin channels
+
+    Some config changes may reboot the node
+
+    Not all firmware versions support this – use recent stable builds
+
+🇳🇿 Recommended Use in NZ
+
+For community or rural mesh projects:
+
+    Set a private admin key across all nodes you manage
+
+    Don’t leave repeater nodes with remoteAdmin enabled unless you're confident in channel security
+
+    Track admin keys securely (use a shared password vault or printed QR)
+
+
