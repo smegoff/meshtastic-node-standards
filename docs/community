@@ -1,5 +1,10 @@
-# Community & Contribution
+# Contributing to Meshtastic Node Standards
 
-- **Contribution guidelines**: make changes via pull request, reference node ID/location  
-- **Code of Conduct**: respect other deployments, avoid channel collisions, coordinate regionally  
-- **Node ownership**: clearly state who owns/supports each node (in node info)
+## Pull Request Process  
+- Fork repo, create branch, edit relevant file  
+- Provide rationale & tests if applicable  
+- Submit PR referencing existing issues
+
+## Code of Conduct  
+- Be respectful — we’re building community comms  
+- No overlapping channel keys without prior coordination  
